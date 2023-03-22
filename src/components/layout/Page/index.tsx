@@ -4,6 +4,7 @@ import Footer from '../Footer';
 import Header from '../Header';
 
 import style from './Page.module.scss';
+
 const Page = () => {
   return (
     <div>

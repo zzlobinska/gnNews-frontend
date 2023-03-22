@@ -1,0 +1,52 @@
+@use 'src/styles' as *;
+
+.header {
+  padding: 48px calc(50% - 700px);
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  align-items: center;
+}
+
+.logo {
+  font-size: 48px;
+  font-family: $second-font;
+  color: $green;
+  font-weight: lighter;
+}
+
+.logoDarker {
+  font-weight: bold;
+  font-family: $second-font;
+  color: $dark-green;
+}
+
+.btns {
+  gap: 30px;
+  display: flex;
+}
+
+.button {
+  background-color: #fff;
+  border: none;
+  font-size: 18px;
+  padding: 12px;
+  color: $dark-gray;
+  cursor: pointer;
+  transition: color 0.3s;
+  &:hover {
+    color: $green;
+  }
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+}
