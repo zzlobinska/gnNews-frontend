@@ -4,7 +4,9 @@ const Timer = () => {
   const [dateState, setDateState] = useState(new Date());
 
   useEffect(() => {
-    setInterval(() => setDateState(new Date()), 30_000);
+    const interval = setInterval(() => setDateState(new Date()), 30_000);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
