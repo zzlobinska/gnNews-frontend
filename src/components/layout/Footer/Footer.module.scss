@@ -1,0 +1,28 @@
+@use 'src/styles' as *;
+
+.footer {
+  display: flex;
+  padding: 21px calc(50% - 700px);
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text {
+  text-transform: uppercase;
+  color: $green;
+}
+
+.textDarker {
+  color: $dark-green;
+}
+
+.boxLeft {
+  min-width: 150px;
+  display: flex;
+  align-items: center;
+}
+.boxRight {
+  @extend .boxLeft;
+  justify-content: flex-end;
+}

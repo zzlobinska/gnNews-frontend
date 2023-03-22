@@ -1,7 +1,7 @@
 @use 'src/styles' as *;
 
 .header {
-  padding: 48px calc(50% - 700px);
+  padding: 21px calc(50% - 700px);
   background-color: white;
   display: flex;
   justify-content: space-between;
@@ -15,25 +15,15 @@
   align-items: center;
 }
 
-.logo {
-  font-size: 48px;
-  font-family: $second-font;
-  color: $green;
-  font-weight: lighter;
-}
-
-.logoDarker {
-  font-weight: bold;
-  font-family: $second-font;
-  color: $dark-green;
-}
-
 .btns {
-  gap: 30px;
+  gap: 12px;
   display: flex;
 }
 
 .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #fff;
   border: none;
   font-size: 18px;
@@ -47,6 +37,10 @@
 }
 
 .icon {
-  width: 40px;
-  height: 40px;
+  width: 46px;
+  height: 46px;
+
+  &.rotated {
+    transform: rotate(90deg);
+  }
 }

@@ -1,24 +1,26 @@
+
+import classNames from 'classnames';
+
 import { ReactComponent as Tiles } from 'src/assets/icons/grid-fill.svg';
 import { ReactComponent as List } from 'src/assets/icons/layout-three-columns.svg';
 import { ReactComponent as Menu } from 'src/assets/icons/list.svg';
 
 import Button from '../Button';
+import Logo from '../Logo';
 
 import style from './Header.module.scss';
 
 const Header = () => {
   return (
-    <div className={style.header}>
-      <h1 className={style.logo}>
-        gn<span className={style.logoDarker}>News</span>
-      </h1>
+    <header className={style.header}>
+      <Logo />
       <div className={style.container}>
         <div className={style.btns}>
           <button className={style.button}>
             <Tiles className={style.icon} />
           </button>
           <button className={style.button}>
-            <List className={style.icon} />
+            <List className={classNames(style.icon, style.rotated)} />
           </button>
         </div>
         <Button title='Wiadomość' />
@@ -29,7 +31,7 @@ const Header = () => {
           </button>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
