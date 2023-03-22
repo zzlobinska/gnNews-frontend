@@ -7,7 +7,7 @@ import style from './Page.module.scss';
 
 const Page = () => {
   return (
-    <div>
+    <div className={style.page}>
       <Header />
       <div className={style.content}>
         <Outlet />
