@@ -31,6 +31,9 @@
   color: $dark-gray;
   cursor: pointer;
   transition: color 0.3s;
+  &.active {
+    color: $green;
+  }
   &:hover {
     color: $green;
   }
