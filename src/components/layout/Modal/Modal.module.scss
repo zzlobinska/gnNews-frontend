@@ -1,0 +1,65 @@
+@use 'src/styles' as *;
+
+.overlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 6;
+  position: fixed;
+  background-color: rgba(240, 240, 240, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-duration: 0.1s;
+}
+
+.modal {
+  margin: 0 15px;
+  border-radius: 6px;
+  box-shadow: 3px 3px 15px 0 rgba(black, 0.1);
+  background-color: white;
+  padding: 27px;
+  width: 100%;
+  max-width: 705px;
+  animation-duration: 0.1s;
+  overflow: auto;
+  max-height: 95vh;
+  position: relative;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modalHeader {
+  justify-content: flex-end;
+  display: flex;
+}
+
+.closeBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.icon {
+  width: 27px;
+  height: 27px;
+}
+
+.modalBody {
+  line-height: 1.5;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  70% {
+    transform: none;
+  }
+  100% {
+    opacity: 1;
+  }
+}

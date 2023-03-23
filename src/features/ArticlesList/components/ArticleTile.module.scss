@@ -1,0 +1,53 @@
+@use 'src/styles' as *;
+
+.article {
+  display: grid;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  height: 100%;
+  cursor: pointer;
+  gap: 21px;
+  border-radius: 6px;
+  box-shadow: 3px 3px 15px 0 rgba(0, 0, 0, 0.05);
+  transition: box-shadow background-color 0.3s;
+  &:hover {
+    box-shadow: 3px 3px 15px 0 rgba(0, 0, 0, 0.15);
+    background-color: darken(white, 0.75%);
+  }
+}
+
+.modalArticle {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+
+.description {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.title {
+  color: $dark-green;
+}
+
+.link {
+  text-decoration: none;
+  cursor: pointer;
+  color: $green;
+  transition: color 0.3s;
+  &:hover {
+    color: $dark-green;
+  }
+}
