@@ -8,3 +8,5 @@ export type ArticleType = {
   content: string | null;
   author: string | null;
 };
+
+export type ArticlePropsType = { article: ArticleType };
