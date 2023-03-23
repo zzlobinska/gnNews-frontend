@@ -1,12 +1,19 @@
+import { ArticleType } from 'src/constans/types';
+
 import style from '../ArticlesList.module.scss';
 
-const Article = () => {
+type ArticlePropsType = { article: ArticleType };
+
+const Article = ({ article }: ArticlePropsType) => {
+  const { title, source, publishedAt } = article;
+  const date = new Date(publishedAt).toDateString;
+  console.log(date);
   return (
     <article className={style.article}>
-      <h2 className={style.title}>Artykuł o kotkach</h2>
+      <h2 className={style.title}>{title}</h2>
       <div className={style.description}>
-        <p className={style.source}>Instytut danych</p>
-        <p className={style.date}>11.12.2001 18:40</p>
+        <p className={style.source}>{source.name}</p>
+        <p className={style.date}>{date}</p>
       </div>
     </article>
   );
