@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import classNames from 'classnames';
 
 import { ArticlesApi } from 'src/api';
 import { ArticleType } from 'src/constans/types';
 
-import Article from './components/Article';
+import ArticleList from './components/ArticleList';
+import ArticleTile from './components/ArticleTile';
 
 import style from './ArticlesList.module.scss';
 
@@ -28,9 +30,10 @@ const ArticlesList = () => {
   }, []);
 
   return (
-    <div className={style.content}>
+    <div className={classNames(style.content, style.tiles)}>
       {articles.map((article) => (
-        <Article key={article.url} article={article} />
+        // <ArticleList key={article.url} article={article} />
+        <ArticleTile key={article.url} article={article} />
       ))}
     </div>
   );

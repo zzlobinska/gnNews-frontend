@@ -5,34 +5,9 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-}
 
-.article {
-  background-color: white;
-  padding: 24px 18px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-items: end;
-  border-radius: 6px;
-  cursor: pointer;
-  box-shadow: 3px 3px 15px 0 rgba(0, 0, 0, 0.05);
-  transition: box-shadow background-color 0.3s;
-  &:hover {
-    box-shadow: 3px 3px 15px 0 rgba(0, 0, 0, 0.15);
-    background-color: darken(white, 0.75%);
+  &.tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr))
   }
-}
-
-.title {
-  color: $dark-green;
-}
-
-.description {
-  display: flex;
-  gap: 30px;
-  align-items: center;
-}
-
-.source {
-  font-size: 18px;
 }
