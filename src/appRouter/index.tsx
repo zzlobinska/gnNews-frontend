@@ -7,7 +7,10 @@ import ArticlesList from 'src/features/ArticlesList';
 export const router = createBrowserRouter([
   {
     element: <Page />,
-    children: [{ path: '/', element: <ArticlesList /> }]
+    children: [
+      { path: '/', element: <ArticlesList /> },
+      { path: '/country/:id', element: <ArticlesList /> }
+    ]
   }
 ]);
 

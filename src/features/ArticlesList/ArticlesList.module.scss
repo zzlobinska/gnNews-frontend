@@ -1,0 +1,13 @@
+@use 'src/styles' as *;
+
+.content {
+  padding: 90px calc(50% - 700px);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  &.tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr))
+  }
+}
