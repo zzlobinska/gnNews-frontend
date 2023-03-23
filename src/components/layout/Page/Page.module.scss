@@ -1,3 +1,5 @@
+@use 'src/styles' as *;
+
 .page {
   display: flex;
   flex-direction: column;
@@ -7,5 +9,5 @@
 
 .content {
   flex: 1;
-  background-color: #ddd;
+  background-color: $gray;
 }

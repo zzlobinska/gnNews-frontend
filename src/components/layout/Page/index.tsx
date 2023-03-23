@@ -9,9 +9,9 @@ const Page = () => {
   return (
     <div className={style.page}>
       <Header />
-      <div className={style.content}>
+      <main className={style.content}>
         <Outlet />
-      </div>
+      </main>
       <Footer />
     </div>
   );
