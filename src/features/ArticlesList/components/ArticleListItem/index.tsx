@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import Modal from 'src/components/layout/Modal';
+import { Modal } from 'src/components';
 import { ArticlePropsType } from 'src/constans/types';
 import { getDate } from 'src/utils/helpers';
 

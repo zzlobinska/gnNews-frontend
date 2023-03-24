@@ -1,18 +1,23 @@
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import classNames from 'classnames';
 
 import { ReactComponent as Tiles } from 'src/assets/icons/grid-fill.svg';
 import { ReactComponent as List } from 'src/assets/icons/layout-three-columns.svg';
 import { ReactComponent as Menu } from 'src/assets/icons/list.svg';
+import { Button, Sidebar } from 'src/components';
+import { Logo } from 'src/components';
 import { showList, showTiles } from 'src/features/ArticlesList/slice';
 import { RootState } from 'src/store';
 
-import Button from '../Button';
-import Logo from '../Logo';
-
 import style from './Header.module.scss';
 
+
+
 const Header = () => {
+  const [isSidebarActive, setIsSidebarActive] = useState<boolean>(false);
+  const openSidebar = () => setIsSidebarActive(true);
+
   const dispatch = useDispatch();
 
   const showAsListHandler = () => {
@@ -51,11 +56,16 @@ const Header = () => {
         <Button title='Wiadomość' />
         <div className={style.btns}>
           <button className={style.button}>pl</button>
-          <button className={style.button}>
+          <button className={style.button} onClick={openSidebar}>
             <Menu className={style.icon} />
           </button>
         </div>
       </div>
+
+      <Sidebar
+        isSidebarActive={isSidebarActive}
+        setIsSidebarActive={setIsSidebarActive}
+      />
     </header>
   );
 };

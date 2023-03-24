@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import placeholder from 'src/assets/img/placeholder.png';
-import Modal from 'src/components/layout/Modal';
+import { Modal } from 'src/components';
 import { ArticlePropsType } from 'src/constans/types';
 import { getDate } from 'src/utils/helpers';
 

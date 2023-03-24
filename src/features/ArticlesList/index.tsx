@@ -36,7 +36,7 @@ const ArticlesList = () => {
       }
     };
     fetchArticles();
-  }, []);
+  }, [params.id]);
 
   return (
     <div className={classNames(style.content, { [style.tiles]: !showAsList })}>
