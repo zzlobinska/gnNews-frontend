@@ -12,11 +12,11 @@ type SidebarPropsType = {
 };
 
 const countries = [
-  { name: 'Polska 🇵🇱', path: '/' },
-  { name: 'USA 🇺🇸', path: '/country/us' },
+  { name: 'USA 🇺🇸', path: '/' },
+  { name: 'Polska 🇵🇱', path: '/country/pl' },
   { name: 'Australia 🇦🇺', path: '/country/au' },
   { name: 'Francja 🇫🇷 ', path: '/country/fr' },
-  {name: 'Meksyk 🇮🇷', path: '/country/mx'}
+  { name: 'Meksyk 🇮🇷', path: '/country/mx' }
 ];
 
 const Sidebar = ({ setIsSidebarActive, isSidebarActive }: SidebarPropsType) => {
@@ -38,6 +38,7 @@ const Sidebar = ({ setIsSidebarActive, isSidebarActive }: SidebarPropsType) => {
               classNames(style.country, { [style.active]: isActive })
             }
             key={country.path}
+            onClick={closeSidebar}
           >
             {country.name}
           </NavLink>

@@ -13,6 +13,7 @@ import { setArticlesCount } from './slice';
 
 import style from './ArticlesList.module.scss';
 
+
 const ArticlesList = () => {
   const [articles, setArticles] = useState<ArticleType[]>([]);
   const params = useParams();
@@ -27,7 +28,7 @@ const ArticlesList = () => {
     const fetchArticles = async () => {
       try {
         const { data } = await ArticlesApi.getArticles({
-          country: params.id || 'pl'
+          country: params.id || 'us'
         });
         setArticles(data.articles);
         dispatch(setArticlesCount(data.articles.length));
@@ -40,6 +41,7 @@ const ArticlesList = () => {
 
   return (
     <div className={classNames(style.content, { [style.tiles]: !showAsList })}>
+     
       {articles.map((article) =>
         showAsList ? (
           <ArticleListItem key={article.url} article={article} />
