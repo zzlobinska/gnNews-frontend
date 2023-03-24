@@ -6,13 +6,14 @@
   top: 0;
   right: -500px;
   height: 100vh;
-  width: 350px;
   padding: 24px;
   display: flex;
   flex-direction: column;
   gap: 30px;
   align-items: end;
   transition: right 0.3s;
+  width: 100%;
+  max-width: 350px;
 
   &.active {
     right: 0;

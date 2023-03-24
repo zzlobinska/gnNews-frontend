@@ -12,8 +12,6 @@ import { RootState } from 'src/store';
 
 import style from './Header.module.scss';
 
-
-
 const Header = () => {
   const [isSidebarActive, setIsSidebarActive] = useState<boolean>(false);
   const openSidebar = () => setIsSidebarActive(true);
@@ -34,33 +32,35 @@ const Header = () => {
   return (
     <header className={style.header}>
       <Logo />
-      <div className={style.container}>
-        <div className={style.btns}>
-          <button
-            onClick={showAsTilesHandler}
-            className={classNames(style.button, {
-              [style.active]: !isListActive
-            })}
-          >
-            <Tiles className={style.icon} />
-          </button>
-          <button
-            onClick={showAsListHandler}
-            className={classNames(style.button, {
-              [style.active]: isListActive
-            })}
-          >
-            <List className={classNames(style.icon, style.rotated)} />
-          </button>
-        </div>
-        <Button title='Wiadomość' />
-        <div className={style.btns}>
+
+        
+          <div className={style.displayBtns}>
+            <button
+              onClick={showAsTilesHandler}
+              className={classNames(style.button, {
+                [style.active]: !isListActive
+              })}
+            >
+              <Tiles className={style.icon} />
+            </button>
+            <button
+              onClick={showAsListHandler}
+              className={classNames(style.button, {
+                [style.active]: isListActive
+              })}
+            >
+              <List className={classNames(style.icon, style.rotated)} />
+            </button>
+          </div>
+          <Button className={style.message} title='Wiadomość' />
+        
+        <div className={style.menuBtns}>
           <button className={style.button}>pl</button>
           <button className={style.button} onClick={openSidebar}>
             <Menu className={style.icon} />
           </button>
         </div>
-      </div>
+
 
       <Sidebar
         isSidebarActive={isSidebarActive}
