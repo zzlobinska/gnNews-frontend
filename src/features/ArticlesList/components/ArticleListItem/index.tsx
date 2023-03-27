@@ -15,16 +15,18 @@ const ArticleList = ({ article }: ArticlePropsType) => {
   const { title, source, publishedAt } = article;
 
   return (
-    <a className={style.article} onClick={() => setIsModalOpen(true)}>
-      <h2 className={style.title}>{title}</h2>
-      <div className={style.description}>
-        <p className={style.source}>{source.name}</p>
-        <p className={style.date}>{getDate(publishedAt)}</p>
-      </div>
+    <>
+      <a className={style.article} onClick={() => setIsModalOpen(true)}>
+        <h2 className={style.title}>{title}</h2>
+        <div className={style.description}>
+          <p className={style.source}>{source.name}</p>
+          <p className={style.date}>{getDate(publishedAt)}</p>
+        </div>
+      </a>
       <Modal closeModal={closeModal} isOpen={isModalOpen}>
         <ModalContent article={article} />
       </Modal>
-    </a>
+    </>
   );
 };
 
