@@ -1,0 +1,25 @@
+@use 'src/styles' as *;
+
+.container {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 21px;
+}
+
+.title {
+  font-size: 36px;
+}
+
+.link {
+  text-decoration: none;
+  color: $green;
+  font-weight: bold;
+  transition: color 0.3s;
+  font-size: 28px;
+  &:hover {
+    color: $dark-green;
+  }
+}

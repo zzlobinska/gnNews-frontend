@@ -5,6 +5,7 @@ import { Link, useParams } from 'react-router-dom';
 import classNames from 'classnames';
 
 import { ArticlesApi } from 'src/api';
+import NotFound from 'src/components/layout/NotFound';
 import { ArticleType } from 'src/constans/types';
 import { RootState } from 'src/store';
 
@@ -15,6 +16,7 @@ import { setArticlesCount } from './slice';
 import style from './ArticlesList.module.scss';
 
 const ArticlesList = () => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [articles, setArticles] = useState<ArticleType[]>([]);
   const params = useParams();
 
@@ -28,6 +30,7 @@ const ArticlesList = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
+        setIsLoading(true);
         const { data } = await ArticlesApi.getArticles({
           country: params.id || 'us'
         });
@@ -35,10 +38,16 @@ const ArticlesList = () => {
         dispatch(setArticlesCount(data.articles.length));
       } catch (error) {
         console.log(error);
+      } finally {
+        setIsLoading(false);
       }
     };
     fetchArticles();
   }, [params.id]);
+
+  if (isLoading) {
+    return <NotFound title='Ładowanie...' />;
+  }
 
   return (
     <div className={classNames(style.content, { [style.tiles]: !showAsList })}>
@@ -51,12 +60,11 @@ const ArticlesList = () => {
           )
         )
       ) : (
-        <div className={style.noArticles}>
-          <p>{t('common:no_articles_found')}</p>
-          <Link className={style.back} to='/'>
-            {t('common:homepage')}
-          </Link>
-        </div>
+        <NotFound
+          title={t('common:no_articles_found')}
+          link='/'
+          linkName={t('common:homepage')}
+        />
       )}
     </div>
   );
