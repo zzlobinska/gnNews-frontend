@@ -12,6 +12,6 @@
   "homepage": "Strona główna",
   "loading": "Ładowanie...",
   "difficulty": "Trudność",
-  "tests": "Testy!",
-  "fun_message": "Config projektu, budowanie komponentów"
+  "tests": "Testy! Miałam duże trudności ze skonfigurowaniem React Testing Library w Vite, więc wolałam zrobić chociażby Vitest :)",
+  "fun_message": "Config projektu, budowanie komponentów - mogłam w końcu zebrać wszystkie dobre praktyki w jednej aplikacji"
 }

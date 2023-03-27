@@ -12,6 +12,6 @@
   "homepage": "Home page",
   "loading": "Loading...",
   "difficulty": "Difficulty",
-  "tests": "Tests!",
-  "fun_message": "Project's config, building components"
+  "tests": "Tests! I had difficulty with configuring React Test Library in Vite, so at least I've decided to use Vitest :)",
+  "fun_message": "Project's config, building components - finally I've got the opportunity to collect all of my good practices into one app"
 }
