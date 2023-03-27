@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
 import classNames from 'classnames';
 
 import { ArticlesApi } from 'src/api';
@@ -46,7 +46,7 @@ const ArticlesList = () => {
   }, [params.id]);
 
   if (isLoading) {
-    return <NotFound title='Ładowanie...' />;
+    return <NotFound title={t('common:loading')}/>;
   }
 
   return (
