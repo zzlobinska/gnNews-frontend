@@ -10,7 +10,7 @@ const Timer = () => {
   }, []);
 
   return (
-    <div>
+    <div data-testid='timer'>
       {dateState.toLocaleString('pl', {
         hour: 'numeric',
         minute: 'numeric'
