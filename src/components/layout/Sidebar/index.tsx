@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
+import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 
@@ -11,16 +12,18 @@ type SidebarPropsType = {
   isSidebarActive: boolean;
 };
 
-const countries = [
-  { name: 'USA 🇺🇸', path: '/' },
-  { name: 'Polska 🇵🇱', path: '/country/pl' },
-  { name: 'Australia 🇦🇺', path: '/country/au' },
-  { name: 'Francja 🇫🇷 ', path: '/country/fr' },
-  { name: 'Meksyk 🇮🇷', path: '/country/mx' }
-];
-
 const Sidebar = ({ setIsSidebarActive, isSidebarActive }: SidebarPropsType) => {
+  const { t } = useTranslation();
   const closeSidebar = () => setIsSidebarActive(false);
+
+  const countries = [
+    { name: t('common:us'), path: '/' },
+    { name: t('common:poland'), path: '/country/pl' },
+    { name: t('common:australia'), path: '/country/au' },
+    { name: t('common:france'), path: '/country/fr' },
+    { name: t('common:mexico'), path: '/country/mx' }
+  ];
+
   return (
     <div
       className={classNames(style.sidebar, {

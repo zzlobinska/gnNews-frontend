@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import placeholder from 'src/assets/img/placeholder.png';
 import { ArticleType } from 'src/constans/types';
 import { getDate } from 'src/utils/helpers';
@@ -9,6 +11,8 @@ type ArticlePropsType = { article: ArticleType };
 const ModalContent = ({ article }: ArticlePropsType) => {
   const { title, source, publishedAt, content, urlToImage, url, author } =
     article;
+
+  const { t } = useTranslation();
 
   return (
     <article className={style.modalArticle}>
@@ -29,7 +33,7 @@ const ModalContent = ({ article }: ArticlePropsType) => {
       <h2 className={style.title}>{title}</h2>
       <p className={style.teaser}>{content}</p>
       <a target='_blank' className={style.link} href={url} rel='noreferrer'>
-        Link do artykułu
+        {t('common:article_link')}
       </a>
     </article>
   );

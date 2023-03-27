@@ -18,7 +18,7 @@ const Header = () => {
   const openSidebar = () => setIsSidebarActive(true);
 
   const dispatch = useDispatch();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const showAsListHandler = () => {
     dispatch(showList());
@@ -30,6 +30,10 @@ const Header = () => {
   const isListActive = useSelector(
     (state: RootState) => state.articlesList.showAsList
   );
+
+  const changeLanguageHandler = (lang: string) => {
+    i18n.changeLanguage(lang);
+  };
 
   return (
     <header className={style.header}>
@@ -56,7 +60,10 @@ const Header = () => {
       <Button className={style.message} title={t('common:message')} />
 
       <div className={style.menuBtns}>
-        <select className={style.button}>
+        <select
+          onChange={(e) => changeLanguageHandler(e.target.value)}
+          className={style.button}
+        >
           <option selected value='pl'>
             pl
           </option>
