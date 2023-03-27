@@ -6,15 +6,18 @@ import classNames from 'classnames';
 import { ReactComponent as Tiles } from 'src/assets/icons/grid-fill.svg';
 import { ReactComponent as List } from 'src/assets/icons/layout-three-columns.svg';
 import { ReactComponent as Menu } from 'src/assets/icons/list.svg';
-import { Button, Sidebar } from 'src/components';
+import { Button, Modal, Sidebar } from 'src/components';
 import { Logo } from 'src/components';
 import { showList, showTiles } from 'src/features/ArticlesList/slice';
 import { RootState } from 'src/store';
+
+import ModalContent from './components/ModalContent';
 
 import style from './Header.module.scss';
 
 const Header = () => {
   const [isSidebarActive, setIsSidebarActive] = useState<boolean>(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const openSidebar = () => setIsSidebarActive(true);
 
   const dispatch = useDispatch();
@@ -33,6 +36,10 @@ const Header = () => {
 
   const changeLanguageHandler = (lang: string) => {
     i18n.changeLanguage(lang);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -57,7 +64,11 @@ const Header = () => {
           <List className={classNames(style.icon, style.rotated)} />
         </button>
       </div>
-      <Button className={style.message} title={t('common:message')} />
+      <Button
+        onClick={() => setIsModalOpen(true)}
+        className={style.message}
+        title={t('common:message')}
+      />
 
       <div className={style.menuBtns}>
         <select
@@ -78,6 +89,9 @@ const Header = () => {
         isSidebarActive={isSidebarActive}
         setIsSidebarActive={setIsSidebarActive}
       />
+      <Modal closeModal={closeModal} isOpen={isModalOpen}>
+        <ModalContent />
+      </Modal>
     </header>
   );
 };

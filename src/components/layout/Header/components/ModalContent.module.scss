@@ -1,0 +1,12 @@
+@use 'src/styles' as *;
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+
+.title {
+  font-size: 21px;
+  color: $dark-green;
+}

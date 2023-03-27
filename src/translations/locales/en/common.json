@@ -9,5 +9,9 @@
   "mexico": "Mexico 🇲🇽",
   "go_back": "Go back",
   "no_articles_found": "No articles found",
-  "homepage": "Home page"
+  "homepage": "Home page",
+  "loading": "Loading...",
+  "difficulty": "Difficulty",
+  "tests": "Tests! I had difficulty with configuring React Test Library in Vite, so at least I've decided to use Vitest :)",
+  "fun_message": "Project's config, building components - finally I've got the opportunity to collect all of my good practices into one app"
 }
