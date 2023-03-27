@@ -18,5 +18,24 @@
   @media (max-width: 1500px) {
     padding: 60px 20px;
   }
-  
+}
+
+.noArticles {
+  font-size: 28px;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 21px;
+}
+
+.back {
+  text-decoration: none;
+  color: $green;
+  font-weight: bold;
+  transition: color 0.3s;
+  &:hover {
+    color: $dark-green;
+  }
 }
