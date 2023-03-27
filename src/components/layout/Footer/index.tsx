@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
 import { RootState } from 'src/store';
@@ -11,6 +12,7 @@ const Footer = () => {
   const articlesCounter = useSelector(
     (state: RootState) => state.articlesList.count
   );
+  const { t } = useTranslation();
 
   return (
     <footer className={style.footer}>
@@ -18,7 +20,7 @@ const Footer = () => {
         <Logo smaller />
       </div>
       <p className={style.text}>
-        liczba wszystkich artykułów:
+        {t('common:articles_total')}
         <span className={style.textDarker}> {articlesCounter}</span>
       </p>
       <div className={style.boxRight}>
