@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import classNames from 'classnames';
 
 import { ArticlesApi } from 'src/api';
@@ -27,7 +27,7 @@ const ArticlesList = () => {
     const fetchArticles = async () => {
       try {
         const { data } = await ArticlesApi.getArticles({
-          country: params.id || 'pl'
+          country: params.id || 'us'
         });
         setArticles(data.articles);
         dispatch(setArticlesCount(data.articles.length));
@@ -36,16 +36,23 @@ const ArticlesList = () => {
       }
     };
     fetchArticles();
-  }, []);
+  }, [params.id]);
 
   return (
     <div className={classNames(style.content, { [style.tiles]: !showAsList })}>
-      {articles.map((article) =>
-        showAsList ? (
-          <ArticleListItem key={article.url} article={article} />
-        ) : (
-          <ArticleTile key={article.url} article={article} />
+      {articles.length > 0 ? (
+        articles.map((article) =>
+          showAsList ? (
+            <ArticleListItem key={article.url} article={article} />
+          ) : (
+            <ArticleTile key={article.url} article={article} />
+          )
         )
+      ) : (
+        <div className={style.noArticles}>
+          <p>Brak artykułów.</p>
+          <Link className={style.back} to='/'>Strona główna</Link>
+        </div>
       )}
     </div>
   );

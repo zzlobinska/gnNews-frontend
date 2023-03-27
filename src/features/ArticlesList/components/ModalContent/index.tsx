@@ -28,7 +28,7 @@ const ModalContent = ({ article }: ArticlePropsType) => {
       <p>{author}</p>
       <h2 className={style.title}>{title}</h2>
       <p className={style.teaser}>{content}</p>
-      <a className={style.link} href={url}>
+      <a target='_blank' className={style.link} href={url} rel='noreferrer'>
         Link do artykułu
       </a>
     </article>

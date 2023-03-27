@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 
-import Footer from '../Footer';
-import Header from '../Header';
+import { Footer } from 'src/components';
+import { Header } from 'src/components';
 
 import style from './Page.module.scss';
 

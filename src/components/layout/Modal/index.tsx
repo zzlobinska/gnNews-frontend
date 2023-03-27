@@ -21,11 +21,7 @@ const Modal = (props: ModalContentProps) => {
     <div onClick={closeModal} className={style.overlay}>
       <div onClick={(e) => e.stopPropagation()} className={style.modal}>
         <div className={style.modalHeader}>
-          <button
-            className={style.closeBtn}
-            onClick={closeModal}
-            title={'Zamknij'}
-          >
+          <button className={style.closeBtn} onClick={closeModal}>
             <CloseBtn className={style.icon} />
           </button>
         </div>

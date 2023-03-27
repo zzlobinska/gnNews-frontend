@@ -6,11 +6,24 @@
   width: 100%;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
+  @media (max-width: 1500px) {
+    padding: 21px 20px;
+  }
+  @media (max-width: 1024px) {
+    font-size: 14px;
+  }
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 }
 
 .text {
   text-transform: uppercase;
   color: $green;
+  width: 100%;
+  text-align: center;
 }
 
 .textDarker {
@@ -21,8 +34,16 @@
   min-width: 150px;
   display: flex;
   align-items: center;
+  @media (max-width: 768px) {
+    order: 1;
+     
+   }
 }
 .boxRight {
   @extend .boxLeft;
   justify-content: flex-end;
+  @media (max-width: 768px) {
+   order: 2;
+    
+  }
 }

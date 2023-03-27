@@ -40,6 +40,9 @@
 
 .title {
   color: $dark-green;
+  @media (max-width: 1024px) {
+    font-size: 21px;
+  }
 }
 
 .link {
