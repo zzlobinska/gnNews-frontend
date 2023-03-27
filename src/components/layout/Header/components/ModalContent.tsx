@@ -1,16 +1,15 @@
+import { useTranslation } from 'react-i18next';
+
 import style from './ModalContent.module.scss';
 
 const ModalContent = () => {
+  const { t } = useTranslation();
   return (
     <div className={style.content}>
-      <div>
-        <h3 className={style.title}>Trudność</h3>
-        <p>Testy!</p>
-      </div>
-      <div>
-        <h3 className={style.title}>Fun</h3>
-        <p>Config projektu, budowanie komponentów</p>
-      </div>
+      <h3 className={style.title}>{t('common:difficulty')}</h3>
+      <p>{t('common:tests')}</p>
+      <h3 className={style.title}>Fun</h3>
+      <p>{t('common:fun_message')}</p>
     </div>
   );
 };

@@ -10,5 +10,8 @@
   "go_back": "Powrót",
   "no_articles_found": "Brak artykułów",
   "homepage": "Strona główna",
-  "loading": "Ładowanie..."
+  "loading": "Ładowanie...",
+  "difficulty": "Trudność",
+  "tests": "Testy!",
+  "fun_message": "Config projektu, budowanie komponentów"
 }

@@ -10,5 +10,8 @@
   "go_back": "Go back",
   "no_articles_found": "No articles found",
   "homepage": "Home page",
-  "loading": "Loading..."
+  "loading": "Loading...",
+  "difficulty": "Difficulty",
+  "tests": "Tests!",
+  "fun_message": "Project's config, building components"
 }
