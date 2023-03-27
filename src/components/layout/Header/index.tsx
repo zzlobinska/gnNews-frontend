@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import classNames from 'classnames';
 
@@ -17,6 +18,7 @@ const Header = () => {
   const openSidebar = () => setIsSidebarActive(true);
 
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const showAsListHandler = () => {
     dispatch(showList());
@@ -33,34 +35,37 @@ const Header = () => {
     <header className={style.header}>
       <Logo />
 
-        
-          <div className={style.displayBtns}>
-            <button
-              onClick={showAsTilesHandler}
-              className={classNames(style.button, {
-                [style.active]: !isListActive
-              })}
-            >
-              <Tiles className={style.icon} />
-            </button>
-            <button
-              onClick={showAsListHandler}
-              className={classNames(style.button, {
-                [style.active]: isListActive
-              })}
-            >
-              <List className={classNames(style.icon, style.rotated)} />
-            </button>
-          </div>
-          <Button className={style.message} title='Wiadomość' />
-        
-        <div className={style.menuBtns}>
-          <button className={style.button}>pl</button>
-          <button className={style.button} onClick={openSidebar}>
-            <Menu className={style.icon} />
-          </button>
-        </div>
+      <div className={style.displayBtns}>
+        <button
+          onClick={showAsTilesHandler}
+          className={classNames(style.button, {
+            [style.active]: !isListActive
+          })}
+        >
+          <Tiles className={style.icon} />
+        </button>
+        <button
+          onClick={showAsListHandler}
+          className={classNames(style.button, {
+            [style.active]: isListActive
+          })}
+        >
+          <List className={classNames(style.icon, style.rotated)} />
+        </button>
+      </div>
+      <Button className={style.message} title={t('common:message')} />
 
+      <div className={style.menuBtns}>
+        <select className={style.button}>
+          <option selected value='pl'>
+            pl
+          </option>
+          <option value='en'>en</option>
+        </select>
+        <button className={style.button} onClick={openSidebar}>
+          <Menu className={style.icon} />
+        </button>
+      </div>
 
       <Sidebar
         isSidebarActive={isSidebarActive}
