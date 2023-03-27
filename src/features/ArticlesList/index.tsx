@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import classNames from 'classnames';
@@ -17,11 +18,12 @@ const ArticlesList = () => {
   const [articles, setArticles] = useState<ArticleType[]>([]);
   const params = useParams();
 
+  const dispatch = useDispatch();
+  const { t } = useTranslation();
+
   const showAsList = useSelector(
     (state: RootState) => state.articlesList.showAsList
   );
-
-  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -50,8 +52,10 @@ const ArticlesList = () => {
         )
       ) : (
         <div className={style.noArticles}>
-          <p>Brak artykułów.</p>
-          <Link className={style.back} to='/'>Strona główna</Link>
+          <p>{t('common:no_articles_found')}</p>
+          <Link className={style.back} to='/'>
+            {t('common:homepage')}
+          </Link>
         </div>
       )}
     </div>
